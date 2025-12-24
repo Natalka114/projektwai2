@@ -7,7 +7,7 @@ $is_logged_in = isset($_SESSION['user_id']);
 
 
 if ($is_logged_in && !isset($_SESSION['imie'])) {
-    $user = $collection->findOne(['_id' => new MongoDB\BSON\ObjectId($_SESSION['user_id'])]);
+    $user = $Collection->findOne(['_id' => new MongoDB\BSON\ObjectId($_SESSION['user_id'])]);
     if ($user) {
         $_SESSION['imie'] = $user['imie'];
     }
@@ -15,6 +15,7 @@ if ($is_logged_in && !isset($_SESSION['imie'])) {
 ?>
 
 <!DOCTYPE html>
+
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
@@ -31,13 +32,17 @@ if ($is_logged_in && !isset($_SESSION['imie'])) {
 
     <p>Witaj na stronie, na której możesz dodać zdjęcia ze swoich partii, turniejów lub zrobione Magnusowi Carlsenowi z ukrycia.</p>
 
-    <a href="upload.php">Prześlij zdjęcie</a> |
+    <a href="upload.php">Prześlij zdjęcie</a> 
 
     <?php if ($is_logged_in): ?>
-        <a href="profile.php">Mój profil</a> |
-        <a href="logout.php">Wyloguj się</a>
+        <a href="login.php">Mój profil</a> 
+        <a href="logout.php">Wyloguj się</a> 
+        <a href="gallery.php">Galeria zdjęć</a>
     <?php else: ?>
         <a href="login.php">Zaloguj się</a>
+        <a href="register.php">Zarejestruj się</a>
+        <a href="gallery.php">Galeria zdjęć</a>
+
     <?php endif; ?>
 </body>
 </html>

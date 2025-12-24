@@ -13,6 +13,7 @@ $mongo = new MongoDB\Client(
 'password' => 'w@i_w3b',
 ]);
 $db = $mongo->wai;
+
 return $db;
 }
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -21,10 +22,7 @@ try {
     $db = get_db();
     
    
-    $collection = $db->users;
-    
-   
-    
+    $Collection = $db->users;
 } catch (Exception $e) {
     die("Błąd połączenia z bazą: " . $e->getMessage());
 }
