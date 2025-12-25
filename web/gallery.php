@@ -90,6 +90,7 @@ $cursor = $db->photos->find($query, [
 </div>
 
 <h1 style="text-align: center; margin-top: 30px;">Galeria Zdjęć</h1>
+<p style="text-align: center; color: #666;">UWAGA! zaaktualizuj koszyk przed przejsciem na kolejna strone ze zdjeciami!</p>
 
 <form action="koszyk.php" method="POST">
     <input type="hidden" name="action" value="save_selected">

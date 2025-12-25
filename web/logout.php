@@ -1,9 +1,7 @@
 <?php
-session_start();
-session_destroy();
-$_SESSION["logged_out"] = true;
-session_regenerate_id(true);
 
+session_start();
+logoutUser();
 header("Location: login.php");
 exit;
 ?>
