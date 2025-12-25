@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     imagecopyresampled($thumb, $source, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
                     if ($extension == 'jpg' || $extension == 'jpeg') imagejpeg($thumb, $uploadFile, 90);
                     elseif ($extension == 'png') imagepng($thumb, $uploadFile);
-                    elseif ($extension == 'gif') imagegif($thumb, $uploadFile);
+                  
                     
                     $zdj = $filename; 
                     imagedestroy($thumb);
